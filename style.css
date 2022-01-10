@@ -1,0 +1,88 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+div#digital-clock{
+    position: relative;
+}
+div.digital-image img {
+    width: 200px !important;
+    height: 200px;
+    border-radius: 100%;
+    margin-left: 40%;
+    margin-top: 10%;
+    
+}
+div#digital-clock #hour {
+    position: absolute;
+    left: 642px;
+    top: 216px;
+    z-index: 2;
+    color: lightsalmon;
+    font-size: 20px;
+}
+div#digital-clock #minutes {
+    position: absolute;
+    left: 678px;
+    top: 216px;
+    z-index: 2;
+    color: aquamarine;
+    font-size: 20px;
+}
+div#digital-clock #seconds {
+    position: absolute;
+    left: 675px;
+    top: 244px;
+    z-index: 2;
+    color: deeppink;
+    font-size: 18px;
+}
+/*dash*/
+span.dash {
+    position: absolute;
+    left: 666px;
+    top: 216px;
+    color: #fff;
+    z-index: 2;
+    font-size: 24px;
+    line-height: 0.8;
+}
+
+/*date*/
+div#dateDay {
+    position: absolute;
+    left: 655px;
+    top: 266px;
+    z-index: 2;
+    color: antiquewhite;
+    font-size: 10px;
+}
+
+div#dateMon {
+    position: absolute;
+    left: 668px;
+    top: 266px;
+    z-index: 2;
+    color: antiquewhite;
+    font-size: 10px;
+}
+
+div#dateYear {
+    position: absolute;
+    left: 685px;
+    top: 267px;
+    z-index: 2;
+    color: antiquewhite;
+    font-size: 10px;
+}
+
+/* span.dashM {
+    position: absolute;
+    left: 700px;
+    top: 275px;
+    color: #fff;
+    z-index: 2;
+    font-size: 28px;
+    line-height: 0.8;
+} */
