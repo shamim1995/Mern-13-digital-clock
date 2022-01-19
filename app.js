@@ -1,39 +1,78 @@
+let doFrom = document.querySelector("#do-form");
 
-const hourApp = document.querySelector("#hour")
-const minutesApp = document.querySelector("#minutes")
-const secondsApp = document.querySelector("#seconds")
-const dateDayApp = document.querySelector("#dateDay")
-const dateMonApp = document.querySelector("#dateMon")
-const dateYearApp = document.querySelector("#dateYear")
+doFrom.addEventListener("submit", function(e){
+e.preventDefault();
 
-const monName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
-
-
-
-setInterval(() => {
+if(doName.value == ""){
+    alert("please write the item");
+}else{
+let doName = document.querySelector("#doName").value;
+let do_menu = document.querySelector("#do_menu");
 
 
-let date = new Date();
-let hour = date.getHours();
-let minute = date.getMinutes();
-let seconds = date.getSeconds();
-let dateDate = date.getDate();
-let dateMon = monName[date.getMonth()];
-let dateYear = date.getFullYear();
+let li = document.createElement("li");
+li.className = "list-group-item";
 
-    hourApp.innerHTML = `${hour}`
-    minutesApp.innerHTML = `${increase(minute)} ${hour>12 ? `<span style="font-size:18px">PM</span>`:`<span style="font-size:18px">AM</span>`}`;
-    secondsApp.innerHTML = `${increase(seconds) }`;
-    dateDayApp.innerHTML = dateDate;
-    dateMonApp.innerHTML = dateMon;
-    dateYearApp.innerHTML = dateYear;
+let closeBtn = document.createElement("button");
+closeBtn.innerHTML = "&times;";
+closeBtn.className = "close";
+
+let doNameText = document.createTextNode(doName);
+
+li.appendChild(closeBtn);
+li.insertBefore(doNameText, closeBtn);
+do_menu.appendChild(li);
+
+document.querySelector("#doName").value = "";
+
+closeBtn.addEventListener('click',function () {
+    this.parentElement.remove()
     
-    if(hour>12 && hour<23){
-        hourApp.innerHTML = "0"+`${hour-12}`
-    } else if(hour>22){
-hourApp.innerHTML = `${hour-12}`
-    }else if (hour < 10) {
-        hourApp.innerHTML = "0" + `${hour}`
-    }
+})
+}
 
-}, 1000);
+
+})
+
+
+/**
+ * this is for counter 
+ */
+
+const counter_form = document.getElementById("counter_form");
+ 
+
+counter_form.addEventListener("submit", function(e){
+
+   e.preventDefault();
+    let date = this.querySelector("input[type='date']").value;
+    let time = this.querySelector("input[type='time']").value;
+    let counter = document.getElementById("counter")
+ 
+
+    setInterval(function () {
+       
+       
+
+        let start_time = new Date();
+        let end_time = new Date(date + ' ' + time)
+        let time_diff = Math.floor(Math.abs(end_time.getTime() - start_time.getTime()));
+
+        let sec = Math.floor(time_diff / 1000);
+        let min = Math.floor(sec / 60);
+        let hours = Math.floor(min / 60);
+        let days = Math.floor(hours / 24);
+
+        let total_hour = hours - (days * 24)
+        let total_min = min - (days * 24 * 60) - total_hour * 60;
+        let total_sec = sec - (days * 24 * 60 * 60) - total_hour * 60 * 60 - total_min * 60;
+
+        counter.innerHTML = `${zero(days)} : ${zero(total_hour)} : ${zero(total_min)} : ${zero(total_sec)}`
+       
+    })
+
+    
+    
+
+
+});

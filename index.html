@@ -4,54 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/a8b281f14c.css">
     <link rel="stylesheet" href="style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
     
-        
-                    <div id="digital-clock">
-                        <div class="digital-image"><img src="./_assets/image/digital watch.jpg" alt=""></div>
-
-                        <div id="hour"> </div><span class="dash">:</span>
-                        <div id="minutes"></div><span class="dashM"></span>
-                        <div id="seconds"> </div>
-                        <div id="dateDay"></div>
-                        <div id="dateMon"></div>
-                        <div id="dateYear"></div>
-                        
-                    </div>
+<section class="wraper">
+    <div class="card">
+        <div class="card-body">
+            <form id="do-form" action="" class="d-flex">
+                <div class="form-group">
+                    <input id="doName" type="text" class="form-control" placeholder="Do-Name">
+                </div>
+                <div class="form-group mx-lg-2">
+                    <input type="submit" class="btn btn-danger" value="Add">
+                </div>
+            </form>
+            <hr>
+            <ul class="list-group" id="do_menu">
+               
+               
                 
-  
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<section id="ageCal" class=" wraper">
+    <div class="card">
+        <div class="card-body">
+            <form id="counter_form" class="d-flex">
+                <div class="form-gorup">
+                    <input class="form-control" type="date" >
+                </div>
+                <div class="form-gorup mx-lg-2">
+                    <input class="form-control" type="time">
+                </div>
+                 <div class="form-gorup">
+                     <input class="form-control btn btn-primary" value = "Create an order" type="submit" >
+                 </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div id="counter"></div>
+    
+</section>
 
 
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+</script>
 <script src="./function.js"></script>    
-<script src="./app.js"></script>    
+<script src="./app.js"></script> 
+   
 </body>
 </html>
